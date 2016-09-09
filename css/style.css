@@ -1,0 +1,117 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+html {
+    background-color: #eee;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+}
+#browserWarning {
+    display: none;
+    position: fixed;
+    height: 40px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: black;
+}
+.logo {
+    position: absolute;
+    content: url(../logo/icon.png);
+    width: 30px;
+    top: 25px;
+    left: 30px;
+    -webkit-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+}
+.title {
+    position: absolute;
+    top: 15px;
+    left: 85px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+.nav {
+    background-color: #00b4ff;
+    height: 80px;
+    width: 100%;
+}
+.nav-links {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.nav-links li {
+	float: right;
+}
+.nav-links li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 28px 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+.nav-links li a:hover{
+	background-color: rgba(255, 255, 255, 0.4);
+}
+.home {
+    height: 80%;
+    cursor: pointer;
+}
+.footer {
+	height: 82px;
+	background-color: #141414;
+	width: 100%;
+    padding: 0;
+    position: relative;
+    -webkit-transition: all 100ms ease;
+    transition: all 100ms ease;
+}
+.copyright {
+    position: absolute;
+    top: 30px;
+    left: 85px;
+    color: #fff;
+}
+.link-logo {
+    background-size: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin: 20px;
+    float: right;
+    -webkit-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+}
+.link-logo:hover, .logo:hover{
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.youtube {
+    background-image: url(../logo/YouTube_light_color_icon.png)
+}
+.github {
+    background-image: url(../logo/GitHub-Mark-Light-120px-plus.png)
+}
+.dribble {
+    background-image: url(../logo/dribbble-ball-mark.png)
+}
+.twitter {
+    background-image: url(../logo/Twitter_Logo_White_On_Image.png)
+}
+.codepen {
+    background-image: url(../logo/Button-White-Large.png)
+}
