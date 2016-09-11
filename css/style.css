@@ -149,9 +149,6 @@ body {
     margin-top: 2px;
 }
 .button {
-    -webkit-border-radius: 15;
-    -moz-border-radius: 15;
-    border-radius: 15px;
     -webkit-box-shadow: 0 1px 6px #141414;
     -moz-box-shadow: 0 1px 6px #141414;
     box-shadow: 0 1px 6px #141414;
@@ -236,7 +233,7 @@ body {
     max-width: 27vw;
     min-width: 230px;
     margin: 0 auto;
-    margin-bottom: 15vh;
+    margin-bottom: 80px;
     padding: 1vh 2vw;
     border: 6px solid #fff;
     background-color: rgba(20, 20, 20, 0.6);
@@ -321,6 +318,17 @@ body {
             width: 80vw;
         }
         .header {
-            height: 109vh;
+            height: 120vh;
+        }
+        .link-logo {
+            height: 10vw;
+            width: 10vw;
+            margin: 22px 20px 0 10px;
+        }
+        .ad-box--title {
+            width: auto;
+        }
+        .footer {
+            height: 12vh;
         }
 }
