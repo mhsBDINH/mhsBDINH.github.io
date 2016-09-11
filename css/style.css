@@ -78,20 +78,18 @@ body {
 
 .content-box {
     display: inline-block;
-    height: 58vh;
-    min-width: 485px;
-    width: 18vw;
+    height: 68vh;
+    width: 19vw;
     margin: 20px 40px;
     color: #141414;
     border-radius: 2px;
     border: 6px solid #141414;
-    padding: 30px 35px;
+    padding: 20px 25px;
     box-shadow: 0 4px 6px 1px rgba(0,0,0,0.4);
 }
 
 .content-box img {
     width: 16vw;
-    min-width: 485px;
 }
 
 .fa {
@@ -147,7 +145,7 @@ body {
 }
 
 .nav-links li a:hover {
-    color: #141414;
+    color: #00b4ff;
     margin-top: 2px;
 }
 .button {
@@ -177,7 +175,7 @@ body {
     text-decoration: none;
     padding: 26px;
     font-size: 24px;
-    background-color: rgba(20, 20, 20, 1);
+    background-color: #00b4ff;
 }
 
 .footer {
@@ -265,4 +263,64 @@ body {
 
 .codepen {
     background-image: url(../logo/Button-White-Large.png);
+}
+.mobile-button {
+    display: none;
+    padding: 20px;
+    height: 40px;
+    width: 40px;
+    float: right;
+    clear: both;
+}
+@media screen and (max-width: 1024px)  {
+    .responsive {
+        position: absolute;
+        background: rgba(20, 20, 20, 0.6);
+        top: 80px;
+        display: inline-block !important;
+        text-align: left;
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 100%;
+        border-top: 2px solid #fff;
+
+    }
+    .nav {
+        position: fixed;
+        top: 0px;
+    }
+    .nav-links {
+        display: none;
+    }
+    .mobile-button {
+        display: inline-block;
+    }
+    .responsive li {
+        float: none;
+        display: inline;
+      }
+      .responsive li a {
+        display: block;
+        text-align: left;
+        border-bottom: 2px solid #fff;
+        }
+        .headercontent {
+            padding-top: 25vh;
+        }
+        .title-bottom {
+            display: none;
+        }
+        .content-box {
+            margin: 0;
+            width: auto;
+            height: auto;
+            border: none;
+            box-shadow: none;
+        }
+        .content-box img {
+            width: 80vw;
+        }
+        .header {
+            height: 109vh;
+        }
 }
