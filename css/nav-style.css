@@ -1,0 +1,39 @@
+.nav {
+    background-color: rgba(20, 20, 20, 0.6);
+    height: 80px;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    float: right;
+}
+
+.nav-links li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 28px 30px;
+    text-decoration: none;
+    transition: .3s;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Open Sans',sans-serif;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #00b4ff;
+    margin-top: 2px;
+}
