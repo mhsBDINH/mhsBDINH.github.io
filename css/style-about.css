@@ -1,15 +1,20 @@
+
+.header {
+  height: 100%;
+}
+.outer-header {
+  max-width: 90%;
+  margin-top: 10%;
+}
 .outer-header__avatar {
   width: 200px;
 }
-.header {
-  height: 100% !important;
-}
-.outer-header {
-  max-width: 90% !important;
-  margin-top: 10%;
-}
 .outer-header h1, .outer-header h2, .outer-header p{
   color: #fff;
+}
+.about--box_interested img {
+  height: 200px;
+  width: 200px;
 }
 @media screen and (max-width: 1024px)  {
   .outer-header {
