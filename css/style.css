@@ -208,13 +208,32 @@ body {
 .codepen {
     background-image: url(../logo/Button-White-Large.png);
 }
-.mobile-button {
-    display: none;
-    padding: 20px;
-    height: 40px;
-    width: 40px;
-    float: right;
-    clear: both;
+.about--box {
+  display: inline-flex;
+}
+.about--box_interested img {
+  height: 200px;
+  width: 200px;
+  margin-top: 5%;
+}
+.about--box_interested a {
+  color: #000;
+}
+.outer-box {
+  max-width: 90%;
+  margin-top: 10%;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  padding: 1vh 2vw;
+  border: 6px solid #fff;
+  background-color: rgba(20, 20, 20, 0.6);
+  box-shadow: 0 4px 6px 1px rgba(0,0,0,0.4);
+}
+.outer-box__avatar {
+  width: 200px;
+}
+.outer-box h1, .outer-box h2, .outer-box p{
+  color: #fff;
 }
 @media screen and (max-width: 1024px)  {
   .responsive {
@@ -281,5 +300,15 @@ body {
   }
   #browserWarning {
       position: fixed;
+  }
+  .outer-box {
+    margin-top: 30%;
+  }
+  .about--box {
+    display: block;
+  }
+  .about--box_interested {
+    display: block;
+    width: 100%;
   }
 }

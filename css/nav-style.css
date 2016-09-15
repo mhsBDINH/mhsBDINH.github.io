@@ -37,3 +37,11 @@
     color: #00b4ff;
     margin-top: 2px;
 }
+.mobile-button {
+    display: none;
+    padding: 20px;
+    height: 40px;
+    width: 40px;
+    float: right;
+    clear: both;
+}
