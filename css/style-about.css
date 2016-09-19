@@ -3,7 +3,7 @@
 }
 .outer-header {
   max-width: 90%;
-  margin-top: 10%;
+  margin-top: 80px;
 }
 .outer-header__avatar {
   width: 200px;
@@ -15,8 +15,12 @@
   display: inline-flex;
 }
 .about--box_interested {
-  width: 30%;
-  display: inline-block;
+  margin: 0 5px;
+  margin-bottom: 80px;
+  padding: 5px;
+  border: 6px solid #fff;
+  background-color: rgba(20, 20, 20, 0.6);
+  box-shadow: 0 4px 6px 1px rgba(0,0,0,0.4);
 }
 .about--box_interested img {
   height: 200px;
@@ -26,10 +30,14 @@
 div.outer-header:nth-child(2) {
   max-width: 20%;
   max-height: 20%;
+  margin: 0 auto;
+}
+div.outer-header:nth-child(3) {
+    margin: 40px auto;
 }
 @media screen and (max-width: 1024px)  {
   .outer-header {
-    margin-top: 30%;
+    margin-top: 150px;
   }
   .header {
     height: 120vh;
@@ -39,6 +47,6 @@ div.outer-header:nth-child(2) {
   }
   .about--box_interested {
     display: block;
-    width: 100%;
+    margin: 0 0 40px 0;
   }
 }
