@@ -4,6 +4,7 @@
 .outer-header {
   max-width: 90%;
   margin-top: 80px;
+  border: none;
 }
 .outer-header__avatar {
   width: 200px;
@@ -18,9 +19,10 @@
   margin: 0 5px;
   margin-bottom: 80px;
   padding: 5px;
-  border: 6px solid #fff;
+  border: none;
   background-color: rgba(20, 20, 20, 0.6);
   box-shadow: 0 4px 6px 1px rgba(0,0,0,0.4);
+  width: 100%;
 }
 .about--box_interested img {
   height: 200px;
@@ -48,5 +50,6 @@ div.outer-header:nth-child(3) {
   .about--box_interested {
     display: block;
     margin: 0 0 40px 0;
+    width: 97%;
   }
 }
