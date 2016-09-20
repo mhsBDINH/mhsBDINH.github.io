@@ -18,6 +18,7 @@
 }
 .port-text p{
     width: 50%;
+    color: #fff;
 }
 .port-button {
     background: url(../image/link.png) no-repeat center center;
