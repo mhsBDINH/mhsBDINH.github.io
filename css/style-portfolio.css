@@ -1,33 +1,13 @@
 .header {
     height: 100%;
 }
-.port-contain {
-    margin: 0 auto;
-    padding: 1vh 2vw;
+.ad-box {
+    padding-top: 90px;
 }
-.port-box {
-    display: inline-flex;
-    margin-top: 40px;
+.content-box {
+    padding: 0;
+    border: none;
     background-color: rgba(20, 20, 20, 0.6);
-    box-shadow: 0 4px 6px 1px rgba(0,0,0,0.4);
-    height: 245px;
-    width: 100%;
-}
-.port-img {
-    width: 40%;
-}
-.port-text p{
-    width: 50%;
     color: #fff;
-}
-.port-button {
-    background: url(../image/link.png) no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 245px;
-    width: 245px;
-    background: green;
-    text-align: center;
+    width: 26vw;
 }
