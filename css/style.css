@@ -233,37 +233,6 @@ body {
   color: #fff;
 }
 @media screen and (max-width: 768px)  {
-  .responsive {
-      position: absolute;
-      background: rgba(20, 20, 20, 0.6);
-      top: 80px;
-      display: inline-block !important;
-      text-align: left;
-      box-sizing: border-box;
-      overflow: hidden;
-      width: 100%;
-      border-top: 2px solid #fff;
-
-  }
-  .nav {
-      position: fixed;
-      top: 0px;
-  }
-  .nav-links {
-      display: none;
-  }
-  .mobile-button {
-      display: inline-block;
-  }
-  .responsive li {
-      float: none;
-      display: inline;
-  }
-  .responsive li a {
-      display: block;
-      text-align: left;
-      border-bottom: 2px solid #fff;
-  }
   .headercontent {
       padding-top: 25vh;
   }
