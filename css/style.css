@@ -232,7 +232,7 @@ body {
 .outer-box h1, .outer-box h2, .outer-box p{
   color: #fff;
 }
-@media screen and (max-width: 1024px)  {
+@media screen and (max-width: 768px)  {
   .responsive {
       position: absolute;
       background: rgba(20, 20, 20, 0.6);

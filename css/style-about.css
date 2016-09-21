@@ -37,7 +37,7 @@ div.outer-header:nth-child(2) {
 div.outer-header:nth-child(3) {
     margin: 40px auto;
 }
-@media screen and (max-width: 1024px)  {
+@media screen and (max-width: 768px)  {
   .outer-header {
     margin-top: 150px;
   }
