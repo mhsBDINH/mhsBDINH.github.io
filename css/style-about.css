@@ -2,6 +2,7 @@
   height: 100% !important;
 }
 .outer-header {
+  padding: 20px;
   max-width: 90%;
   margin-top: 80px;
   border: none;
@@ -22,11 +23,13 @@
   border: none;
   background-color: rgba(20, 20, 20, 0.6);
   box-shadow: 0 4px 6px 1px rgba(0,0,0,0.4);
-  width: 100%;
+  width: 20vw;
 }
 .about--box_interested img {
-  height: 200px;
-  width: 200px;
+  height: 20vw;
+  width: 20vw;
+  max-width: 200px;
+  max-height: 200px;
   margin-top: 5%;
 }
 div.outer-header:nth-child(2) {

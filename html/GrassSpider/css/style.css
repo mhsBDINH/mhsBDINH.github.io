@@ -81,9 +81,13 @@ a {
 }
 .grass-spider__icon {
     width: 152px;
-    height: 151px;
+    height: 152px;
     margin: 0 auto;
     border: 6px solid #fff;
+}
+.grass-spider__icon img {
+    width: 152px;
+    height: 152px;
 }
 .table-container {
     margin: 0 auto;
@@ -91,7 +95,7 @@ a {
     padding-top: 20px;
     text-align: center;
     color: #fff;
-    padding-bottom: 40px;
+    overflow-x: auto;
 }
 .table-container h2 {
     padding-bottom: 20px;
@@ -222,19 +226,7 @@ tr:hover {
   #browserWarning {
       position: fixed;
   }
-  .table-container {
-    overflow-x: auto;
-  }
   .content {
     margin-top: 80px;
-  }
-  .table-container::-webkit-scrollbar
-  {
-    height: 20px;
-  	background-color: #fff;
-  }
-  .table-container::-webkit-scrollbar-thumb
-  {
-  	background-color: #00b4ff;
   }
 }
