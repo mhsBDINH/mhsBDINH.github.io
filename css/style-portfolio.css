@@ -39,9 +39,9 @@ button:hover {
 }
 .content-box__h1{
     color: #fff;
-    border-bottom: 6px solid #fff;
     font-size: 40px;
     margin-top: -9px;
+    padding: 20px;
 }
 .ad-box--title h2 {
     color: #fff;
