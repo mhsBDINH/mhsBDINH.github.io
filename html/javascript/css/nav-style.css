@@ -40,11 +40,14 @@
 .mobile-button {
     display: none;
     padding: 20px;
-    color: #fff;
     height: 40px;
     width: 40px;
     float: right;
     clear: both;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
 }
 @media screen and (max-width: 768px)  {
     .responsive {

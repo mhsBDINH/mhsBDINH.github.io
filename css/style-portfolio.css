@@ -17,6 +17,9 @@ button {
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
 }
+.headercontent, a {
+    padding-top: 0;
+}
 button:hover {
     opacity: .8;
 }
