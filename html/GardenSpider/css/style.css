@@ -316,7 +316,7 @@ a {
     -webkit-column-count: 1;
     column-count: 1;
   }
-  .main-lowerbox__pagination_style, .main-lowerbox__list{
+  .main-lowerbox__pagination_style, .main-lowerbox__list {
       width: 100%;
   }
   .main-lowerbox__list li {
