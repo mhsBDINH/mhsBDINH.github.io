@@ -311,13 +311,21 @@ a {
       padding: 0;
       width: 100%;
   }
+  .main-box__content-img {
+      width: 100%;
+      padding: 0;
+      background-color: transparent;
+  }
+  .main-box__content-img img {
+      width: 100%;
+  }
   .main-box__content-row-2 {
       -moz-column-count: 1;
     -webkit-column-count: 1;
     column-count: 1;
   }
   .main-lowerbox__pagination_style, .main-lowerbox__list {
-      width: 100%;
+      width: 99%;
   }
   .main-lowerbox__list li {
       text-align: center;
