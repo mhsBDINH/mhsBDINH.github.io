@@ -53,6 +53,11 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
+    nav {
+        margin-top: 80px;
+        position: fixed;
+    }
+
     .responsive {
         position: absolute;
         background: rgba(20,20,20,0.6);
@@ -76,6 +81,8 @@ nav {
 
     .mobile-button {
         display: inline-block;
+        right: 0;
+        position: absolute;
     }
 
     .responsive li {
