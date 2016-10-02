@@ -22,9 +22,6 @@ button:focus {
     outline: 2px solid #fff;
 }
 
-.headercontent,a {
-    padding-top: 0;
-}
 
 button:hover {
     opacity: .8;
@@ -44,7 +41,8 @@ button:hover {
     border: none;
     background-color: rgba(20,20,20,0.6);
     color: #fff;
-    width: 26vw;
+    width: 330px;
+    margin: 20px;
 }
 
 .content-box img {
@@ -67,12 +65,16 @@ button:hover {
     padding: 20px;
 }
 
+.about--box_interested {
+    margin-bottom: 0;  
+}
+
 @media screen and (max-width: 768px) {
     .content-box {
         display: block;
         width: 100%;
+        max-width: 100%;
         margin-bottom: 150px;
-        padding: 40px 0;
     }
 
     .ad-box {
