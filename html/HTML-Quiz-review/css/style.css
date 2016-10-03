@@ -201,7 +201,7 @@ tr:hover {
   #browserWarning {
       position: fixed;
   }
-  pre {
+  pre, code {
     width: 80%;
   }
   .contain-box img {
