@@ -1,0 +1,228 @@
+@import  'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: #333;
+}
+a {
+    color: #fff;
+    font-weight: bold;
+}
+.logo {
+    position: absolute;
+    background: url(../logo/icon.png) no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    top: 25px;
+    left: 30px;
+    -webkit-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -moz-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -ms-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -o-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+}
+.logo:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.title {
+    position: absolute;
+    top: 15px;
+    left: 85px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Open Sans',sans-serif;
+    text-align: left;
+}
+
+pre {
+    font-size: 90%;
+    line-height: 1.2em;
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    width: 800px;
+    display: block;
+    color: #00b4ff;
+    padding: 1em;
+    margin: 0 auto;
+    background: #fff;
+    border: solid 1px #e1e1e1
+}
+
+.contain-box {
+    display: block;
+    text-align: center;
+    margin: 100px;
+    color: #fff;
+}
+
+.contain-box a {
+    display: block;
+}
+
+.contain-box img {
+    width: 400px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 6px solid #00b4ff;
+}
+
+table, th, td {
+    margin: 0 auto;
+}
+
+th, td {
+    color: #fff;
+    padding: 15px;
+}
+
+th {
+    background-color: #00b4ff;
+    color: white;
+    text-align: center;
+}
+
+td {
+    border: 6px solid #00b4ff;
+    text-align: left;
+}
+
+tr {
+    background-color: rgba(20, 20, 20, 0.6);
+}
+
+tr:hover {
+    background-color: rgba(20, 20, 20, 0.2);
+}
+
+.footer {
+    height: 82px;
+    background-color: #141414;
+    width: 100%;
+    padding: 0;
+    position: relative;
+}
+
+.copyright {
+    position: absolute;
+    top: 30px;
+    left: 85px;
+    color: #fff;
+}
+.footer-link {
+    right: 0;
+    position: absolute;
+}
+.link-logo {
+    background-size: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin: 20px 30px 0 10px;
+    float: right;
+    -webkit-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -moz-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -ms-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -o-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+}
+
+.link-logo:hover,.logo:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.youtube {
+    background-image: url(../logo/YouTube_light_color_icon.png);
+}
+
+.github {
+    background-image: url(../logo/GitHub-Mark-Light-120px-plus.png);
+}
+
+.dribble {
+    background-image: url(../logo/dribbble-ball-mark.png);
+}
+
+.twitter {
+    background-image: url(../logo/Twitter_Logo_White_On_Image.png);
+}
+
+.codepen {
+    background-image: url(../logo/Button-White-Large.png);
+}
+@media screen and (max-width: 1024px)  {
+  .responsive {
+      position: absolute;
+      background: rgba(20, 20, 20, 0.6);
+      top: 80px;
+      display: inline-block !important;
+      text-align: left;
+      box-sizing: border-box;
+      overflow: hidden;
+      width: 100%;
+      border-top: 2px solid #fff;
+
+  }
+  .nav {
+      position: fixed;
+      top: 0px;
+  }
+  .nav-links {
+      display: none;
+  }
+  .mobile-button {
+      display: inline-block;
+  }
+  .responsive li {
+      float: none;
+      display: inline;
+  }
+  .responsive li a {
+      display: block;
+      text-align: left;
+      border-bottom: 2px solid #fff;
+  }
+  #browserWarning {
+      position: fixed;
+  }
+  .main-box__content {
+      margin: 100px 0;
+      padding: 0;
+      width: 100%;
+  }
+  .main-box__content-img {
+      width: 100%;
+      padding: 0;
+      background-color: transparent;
+  }
+  .main-box__content-img img {
+      width: 100%;
+  }
+  .main-box__content-row-2 {
+      -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+  .main-lowerbox__pagination_style, .main-lowerbox__list {
+      width: 99%;
+  }
+  .main-lowerbox__list li {
+      text-align: center;
+  }
+}
