@@ -153,8 +153,8 @@ button:focus {
     outline: 2px solid #fff;
 }
 
-.footer {
-    height: 82px;
+footer {
+    height: 80px;
     background-color: #141414;
     width: 100%;
     padding: 0;
@@ -289,19 +289,26 @@ button:focus {
         height: 120vh;
     }
 
+    footer {
+        height: 700px;
+    }
+
+    .footer-link {
+        position: static;
+    }
+
     .link-logo {
-        height: 10vw;
-        width: 10vw;
-        margin: 22px 20px 0 10px;
+        display: block;
+        margin: 50px auto;
+        float: none;
+    }
+
+    .youtube {
+        padding: 50px;
     }
 
     .ad-box--title {
         width: auto;
-    }
-
-    .footer {
-        height: 17vw;
-        max-height: 130px;
     }
 
     #browserWarning {
