@@ -202,8 +202,9 @@ tr:hover {
       position: fixed;
   }
   pre, code {
-    width: 80%;
+    width: 100%;
     word-wrap: break-word;
+    overflow: auto;
   }
   .contain-box img {
     width: 100%;
