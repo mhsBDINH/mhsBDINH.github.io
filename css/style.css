@@ -214,21 +214,16 @@ footer {
     background-image: url(../logo/YouTube_light_color_icon.png);
 }
 
+
 .github {
     background-image: url(../logo/GitHub-Mark-Light-120px-plus.png);
 }
 
-.dribble {
-    background-image: url(../logo/dribbble-ball-mark.png);
-}
-
-.twitter {
-    background-image: url(../logo/Twitter_Logo_White_On_Image.png);
-}
 
 .codepen {
     background-image: url(../logo/Button-White-Large.png);
 }
+
 
 .about--box {
     display: -webkit-inline-box;
@@ -279,10 +274,12 @@ footer {
         height: auto;
         border: none;
         box-shadow: none;
+        display: block;
+        max-width: 100%;
     }
 
     .content-box img {
-        width: 80vw;
+        width: 100%;
     }
 
     .header {
@@ -290,21 +287,22 @@ footer {
     }
 
     footer {
-        height: 700px;
+        height: 420px;
+        padding-top: 20px;
+        box-sizing: border-box;
     }
 
     .footer-link {
         position: static;
+        margin-top: 20px;
     }
 
     .link-logo {
         display: block;
         margin: 50px auto;
         float: none;
-    }
-
-    .youtube {
-        padding: 50px;
+        height: 60px;
+        width: 60px;
     }
 
     .ad-box--title {
