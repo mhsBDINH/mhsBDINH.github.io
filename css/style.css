@@ -136,6 +136,7 @@ button {
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
     background-color: rgba(20,20,20,0.6);
+    cursor: pointer;
 }
 
 button:hover {
