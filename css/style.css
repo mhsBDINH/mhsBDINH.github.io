@@ -192,11 +192,6 @@ footer {
     transform: scale(1.2);
 }
 
-.footer-link {
-    right: 0;
-    position: absolute;
-}
-
 .outer-header {
     max-width: 27vw;
     min-width: 230px;
