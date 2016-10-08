@@ -8,27 +8,21 @@
     <link href="css/sass/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<header></header>
-    <div class="align">
-        <div class="site__container">
-            <div class="loginbox_contain">
-                <div class="loginbox_image">
-                    <img src="icon-black.png" alt="logo">
-                </div>
-                <form action="" class="form form--login" method="post">
-                    <div class="form__field">
-                        <label class="fontawesome-user" for="login__username"></label> <input class="form__input" id="login__username" placeholder="Username" required="" type="text">
-                    </div>
-                    <div class="form__field">
-                        <label class="fontawesome-lock" for="login__password"></label> <input class="form__input" id="login__password" placeholder="Password" required="" type="password">
-                    </div>
-                    <div class="form__field">
-                        <input type="submit" value="Sign In">
-                    </div>
-                </form>
-                <div class="text--center">Not a member? <a href="#">Sign up now</a> </div>
+<div class="main">
+    <div class="login_contain">
+        <form action="" class="login login_login" method="post">
+            <div class="login_field">
+                <input class="login_input" id="login_username" placeholder="Username" required="" type="text">
             </div>
-        </div>
+            <div class="login_field">
+                <input class="login_input" id="login_password" placeholder="Password" required="" type="password">
+            </div>
+            <div class="login_field">
+                <input type="submit" value="Sign In">
+            </div>
+            <div class="login_signup">Not a member? <a href="#">Sign up now</a> </div>
+        </form>
     </div>
+</div>
 </body>
 </html>
