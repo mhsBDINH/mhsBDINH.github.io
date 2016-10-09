@@ -72,9 +72,9 @@ button:hover {
 @media screen and (max-width: 768px) {
     .content-box {
         display: block;
-        width: 100%;
+        width: 60%;
         max-width: 100%;
-        margin: 0 0 150px 0;
+        margin: 0 auto 150px auto;
     }
 
     .ad-box {

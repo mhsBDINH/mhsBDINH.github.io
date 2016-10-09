@@ -1,0 +1,29 @@
+.contain {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    margin: 50px;
+}
+
+.button {
+    margin: 1rem;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 5px solid #000;
+    border-radius: 100%;
+}
+
+.middle {
+    margin: 5px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+.on {
+    background: #000;
+    border: 5px solid #000;
+}
