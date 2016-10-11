@@ -1,0 +1,112 @@
+@import _variable
+
+.nav
+    background-color: $nav_bg
+    height: 80px
+    width: 100%
+    z-index: 1
+    position: relative
+    &-logo
+        position: absolute
+        background: url(../logo/icon.png) no-repeat
+        background-size: contain
+        width: 30px
+        height: 30px
+        top: 25px
+        left: 30px
+        transition: transform 200ms cubic-bezier(.04,.34,.15,1)
+        &:hover
+            transform: scale(1.2)
+    &-btn
+        margin: 15px
+        display: none
+        position: relative
+        width: 40px
+        height: 40px
+        border: 5px solid  $nav_border_color
+        border-radius: 100%
+    &-dot
+        margin: 5px
+        display: none
+        width: 20px
+        height: 20px
+        border-radius: 100%
+    &-fill
+        display: inline-block
+        width: 80px
+        height: 80px
+        position: absolute
+        right: -20px
+        top: -20px
+    &-links
+        list-style-type: none
+        margin: 0
+        padding: 0
+        li
+            float: right
+            a
+                display: inline-block
+                color: $nav_color
+                text-align: center
+                padding: 28px 30px
+                text-decoration: none
+                font-size: 16px
+                font-weight: 700
+                transition: all 200ms ease-in-out
+                &:hover
+                    color: $nav_highlight
+                    margin-top: 2px
+
+.title
+    position: absolute
+    top: 15px
+    left: 85px
+    color: #fff
+    font-size: 18px
+    font-weight: 400
+    font-family: 'Open Sans',sans-serif
+    text-align: left
+
+@media screen and (max-width: $mediamax)
+    .nav
+        position: fixed
+        top: 0
+        &-dot
+            display: inline-block
+            right: -20px
+            top: -20px
+            position: absolute
+            width: 80px
+            height: 80px
+        &-btn
+            display: inline-block
+            right: 0
+            position: absolute
+
+    .nav-links
+        display: none
+
+    .on
+        width: 20px
+        height: 20px
+        background: $nav_bth_color
+        border: 5px solid $nav_border_color
+        position: static
+
+    .responsive
+        position: absolute
+        background: $nav_bg
+        top: 80px
+        display: inline-block !important
+        text-align: left
+        box-sizing: border-box
+        overflow: hidden
+        width: 100%
+        border-top: 2px solid $nav_border_color
+        li
+            float: none
+            display: inline
+        li a
+            display: block
+            text-align: left
+            border-bottom: 2px solid $nav_border_color

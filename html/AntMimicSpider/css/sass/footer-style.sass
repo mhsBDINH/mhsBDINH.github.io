@@ -1,0 +1,62 @@
+@import _variable
+
+.footer
+    height: 80px
+    background-color: $footer_bg
+    width: 100%
+    padding: 0
+    position: relative
+    &-copyright
+        position: absolute
+        top: 30px
+        left: 85px
+        color: #fff
+        font-size: 18px
+        font-weight: 400
+    &-logo
+        background-size: 100%
+        background-position: 50%
+        background-repeat: no-repeat
+        height: 40px
+        width: 40px
+        display: inline-block
+        margin: 20px 30px 0 10px
+        float: right
+        transition: transform 200ms cubic-bezier(.04,.34,.15,1)
+        &:hover
+            transform: scale(1.2)
+    &-title-logo
+        position: absolute
+        background: url(../logo/icon.png) no-repeat
+        background-size: contain
+        width: 30px
+        height: 30px
+        top: 25px
+        left: 30px
+        transition: transform 200ms cubic-bezier(.04,.34,.15,1)
+        &:hover
+            transform: scale(1.2)
+
+
+.github
+    background-image: url(../logo/GitHub-Mark-Light-120px-plus.png)
+
+.codepen
+    background-image: url(../logo/Button-White-Large.png)
+
+@media screen and (max-width: $mediamax)
+    .footer
+        height: 320px
+        padding-top: 20px
+        box-sizing: border-box
+        &-title
+            display: none
+        &-link
+            position: static
+            margin-top: 20px
+        &-logo
+            display: block
+            margin: 50px auto
+            float: none
+            height: 60px
+            width: 60px
