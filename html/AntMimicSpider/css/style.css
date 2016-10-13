@@ -86,56 +86,6 @@
     text-align: left;
 }
 
-@media screen and (max-width: 768px) {
-    .nav {
-        position: fixed;
-        top: 0;
-    }
-    .nav-dot {
-        display: inline-block;
-        right: -20px;
-        top: -20px;
-        position: absolute;
-        width: 80px;
-        height: 80px;
-    }
-    .nav-btn {
-        display: inline-block;
-        right: 0;
-        position: absolute;
-    }
-    .nav-links {
-        display: none;
-    }
-    .on {
-        width: 20px;
-        height: 20px;
-        background: #fff;
-        border: 5px solid #fff;
-        position: static;
-    }
-    .responsive {
-        position: absolute;
-        background: rgba(20, 20, 20, 0.6);
-        top: 80px;
-        display: inline-block !important;
-        text-align: left;
-        box-sizing: border-box;
-        overflow: hidden;
-        width: 100%;
-        border-top: 2px solid #fff;
-    }
-    .responsive li {
-        float: none;
-        display: inline;
-    }
-    .responsive li a {
-        display: block;
-        text-align: left;
-        border-bottom: 2px solid #fff;
-    }
-}
-
 * {
     padding: 0;
     margin: 0;
@@ -150,16 +100,68 @@ body {
     font-weight: 300;
 }
 
-.content {
-    z-index: 2;
-}
-
 .header {
     background: url(https://i.imgur.com/qnVSFfp.jpg) no-repeat center center;
     background-size: cover;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin-top: -80px;
+}
+
+.content {
+    z-index: 2;
+}
+
+.content-align {
+    padding: 185px 0;
+}
+
+.content-bg {
+    padding-top: 100px;
+    height: 100%;
+    background-color: rgba(20, 20, 20, 0.6);
+}
+
+.content-top_icon {
+    width: 152px;
+    height: 152px;
+    margin: 0 auto;
+    border: 6px solid #fff;
+}
+
+.content-top_icon img {
+    width: 152px;
+    height: 152px;
+}
+
+.content-box {
+    margin: 0 auto;
+    height: 100%;
+    width: 70vw;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(20, 20, 20, 0.6);
+    text-align: center;
+}
+
+.content-box img {
+    height: 250px;
+    border: 6px solid #fff;
+}
+
+.content-box_text {
+    text-align: left;
+    margin: 20px;
+    color: #fff;
+}
+
+.content-top_title {
+    text-align: center;
+    margin: 50px auto;
+    background-color: rgba(20, 20, 20, 0.6);
+    width: 300px;
+    padding: 20px;
+    color: #fff;
 }
 
 .footer {
