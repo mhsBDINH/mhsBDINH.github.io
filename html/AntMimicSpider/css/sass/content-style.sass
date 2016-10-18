@@ -2,6 +2,12 @@
     padding: 0
     margin: 0
 
+a
+    color: #fff
+
+ul
+    list-style-type: none
+
 body
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
@@ -46,11 +52,16 @@ body
         text-align: center
         img
             height: 250px
-            border: 6px solid $nav_border_color
+            border: 6px solid $content_border_color
         &_text
             text-align: left
             margin: 20px
             color: #fff
+            width: 90%
+        &_info
+            width: 90%
+            margin-top: 40px
+            background-color: $content_info_color
 
     &-top_title
         text-align: center
@@ -59,3 +70,20 @@ body
         width: 300px
         padding: 20px
         color: $content_color
+
+@media screen and (max-width: 768px)
+    .content
+        &-box
+            width: 100%
+            padding: 0
+            img
+                width: 20rem
+                height: auto
+                box-sizing: border-box
+            &_text
+                margin: 0
+                padding: 20px
+                box-sizing: border-box
+            &_info
+                padding: 20px
+                box-sizing: border-box
