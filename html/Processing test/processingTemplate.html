@@ -10,7 +10,7 @@
         pre {
             font-size: 90%;
             line-height: 1.2em;
-            width: 100%;
+            width: 70%;
             padding: 1rem;
             box-sizing: border-box;
             display: block;
@@ -24,6 +24,7 @@
         }
         .center h1, .center p{
             color: #f4f4f4;
+        }
       </style>
 
   </head>
@@ -31,51 +32,28 @@
     <div class="center">
         <h1>Processing.js Test</h1>
         <p>This is my first Processing.js web-based sketch:</p>
-    	<canvas data-processing-sources="thing.pde"></canvas>
+    	<canvas data-processing-sources="processing.pde"></canvas>
     </div>
 
     <!--Paste Code Below-->
     <pre>
         <h1>Code</h1>
         <code>
+<span style="color: #E2661A;">PFont</span> Roboto;
+
 <span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>() {
-<span style="color: #006699;">size</span>(800,800);
+&nbsp;&nbsp;<span style="color: #006699;">size</span>(800,800);
+&nbsp;&nbsp;Roboto&nbsp;=&nbsp;<span style="color: #006699;">createFont</span>(<span style="color: #7D4793;">&quot;Roboto&quot;</span>, 32);
+&nbsp;&nbsp;<span style="color: #006699;">textFont</span>(Roboto);
 }
 
 <span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>() {
-
-&nbsp;<span style="color: #666666;">//Variables are storage containers for information</span>
-&nbsp;<span style="color: #666666;">//You must tell the program WHAT TYPE OF INFORMATION YOU WILL BE STORING</span>
-&nbsp;
-&nbsp;<span style="color: #666666;">//color (will store a colour in RGB or #HEX)</span>
-&nbsp;<span style="color: #666666;">//RGB</span>
-&nbsp;<span style="color: #666666;">//color variableName = color(R,G,B)</span>
-&nbsp;<span style="color: #666666;">//#HEX</span>
-&nbsp;<span style="color: #666666;">//color variableName = color(#RRGGBB)</span>
-&nbsp;<span style="color: #E2661A;">color</span> FavouriteColour = #00b4ff;
-&nbsp;
-&nbsp;<span style="color: #666666;">//Change the colour of the background</span>
-&nbsp;<span style="color: #006699;">background</span>(FavouriteColour);
-&nbsp;
-&nbsp;<span style="color: #666666;">//inters (ing)</span>
-&nbsp;<span style="color: #666666;">//all non-decimal numbers</span>
-&nbsp;
-&nbsp;<span style="color: #666666;">//Defind and set variables for x,y, size</span>
-&nbsp;<span style="color: #E2661A;">int</span> x = 200;
-&nbsp;<span style="color: #E2661A;">int</span> y = 200;
-&nbsp;<span style="color: #E2661A;">int</span> size = 100;
-&nbsp;<span style="color: #006699;">ellipse</span>(x,y,size,size);
-&nbsp;<span style="color: #006699;">ellipse</span>(x,y,size/2,size/2);
-&nbsp;<span style="color: #006699;">ellipse</span>(x,y,size/4,size/4);
-&nbsp;
-&nbsp;<span style="color: #E2661A;">boolean</span> a = <span style="color: #33997E;">true</span>;
-&nbsp;&nbsp;<span style="color: #669900;">if</span> (!a) {
-&nbsp;&nbsp;<span style="color: #006699;">rect</span>(30, 20, 50, 50);
-}&nbsp;
-&nbsp;&nbsp;<span style="color: #669900;">if</span> (a) {
-&nbsp;&nbsp;<span style="color: #006699;">line</span>(20, 10, 90, 80);
-&nbsp;&nbsp;<span style="color: #006699;">line</span>(20, 80, 90, 10);
-}&nbsp;
+<span style="color: #006699;">background</span>(#f4f4f4);
+<span style="color: #006699;">textFont</span>(Roboto);
+<span style="color: #006699;">fill</span>(#000000);
+<span style="color: #006699;">textSize</span>(35);
+<span style="color: #006699;">textAlign</span>(<span style="color: #718A62;">CENTER</span>, <span style="color: #718A62;">CENTER</span>);
+<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;Hello World&quot;</span>, 350, 350, 100, 100);
 }
         </code>
     </pre>
