@@ -13,6 +13,9 @@ body
     font-size: 16px
     font-weight: 300
 
+pre
+    white-space: pre-wrap
+
 .header
     background: url(https://i.imgur.com/qnVSFfp.jpg) no-repeat center center
     background-size: cover
@@ -46,6 +49,11 @@ body
         padding: 20px
         background-color: $content_bg
         text-align: center
+        &_code
+            text-align: left
+            background-color: $content_code_bg
+        h1
+            color: $content_code_color
 
     &-top_title
         text-align: center

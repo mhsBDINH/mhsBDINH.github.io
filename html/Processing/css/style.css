@@ -145,10 +145,6 @@ a {
     color: #fff;
 }
 
-ul {
-    list-style-type: none;
-}
-
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -158,16 +154,16 @@ body {
     font-weight: 300;
 }
 
+pre {
+    white-space: pre-wrap;
+}
+
 .header {
     background: url(https://i.imgur.com/qnVSFfp.jpg) no-repeat center center;
     background-size: cover;
     width: 100%;
     height: 100%;
     margin-top: -80px;
-}
-
-.content {
-    z-index: 2;
 }
 
 .content-align {
@@ -202,22 +198,13 @@ body {
     text-align: center;
 }
 
-.content-box img {
-    height: 250px;
-    border: 6px solid #00b4ff;
-}
-
-.content-box_text {
+.content-box_code {
     text-align: left;
-    margin: 20px;
-    color: #fff;
-    width: 90%;
+    background-color: #fff;
 }
 
-.content-box_info {
-    width: 90%;
-    margin-top: 40px;
-    background-color: #00b4ff;
+.content-box h1 {
+    color: #00b4ff;
 }
 
 .content-top_title {
@@ -230,23 +217,12 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+    canvas {
+        width: 100%;
+    }
     .content-box {
         width: 100%;
         padding: 0;
-    }
-    .content-box img {
-        width: 20rem;
-        height: auto;
-        box-sizing: border-box;
-    }
-    .content-box_text {
-        margin: 0;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    .content-box_info {
-        padding: 20px;
-        box-sizing: border-box;
     }
 }
 
