@@ -72,21 +72,56 @@
                         <div class="content-box content-box_code">
                             <h1>Code</h1>
 <pre><code>
-<span style="color: #E2661A;">PFont</span> Roboto;
-
 <span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>() {
 &nbsp;&nbsp;<span style="color: #006699;">size</span>(800,800);
-&nbsp;&nbsp;Roboto&nbsp;=&nbsp;<span style="color: #006699;">createFont</span>(<span style="color: #7D4793;">&quot;Roboto&quot;</span>, 32);
-&nbsp;&nbsp;<span style="color: #006699;">textFont</span>(Roboto);
+&nbsp;&nbsp;<span style="color: #006699;">background</span>(#00b4ff);
 }
 
+<span style="color: #E2661A;">int</span> houseWidth=500;
+<span style="color: #E2661A;">int</span> houseHeight=300;
+<span style="color: #E2661A;">int</span> houseMove=250;
+
 <span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>() {
-<span style="color: #006699;">background</span>(#f4f4f4);
-<span style="color: #006699;">textFont</span>(Roboto);
-<span style="color: #006699;">fill</span>(#000000);
-<span style="color: #006699;">textSize</span>(35);
-<span style="color: #006699;">textAlign</span>(<span style="color: #718A62;">CENTER</span>, <span style="color: #718A62;">CENTER</span>);
-<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;Hello World&quot;</span>, 350, 350, 100, 100);
+&nbsp;&nbsp;<span style="color: #666666;">// SUN</span>
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#FDB813);
+&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(50, 50, 200, 200);
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#ffffff);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;(\u00B4\u30FB\u25E1\u30FB\uFF40)&quot;</span>, 40, 65);
+&nbsp;&nbsp;<span style="color: #666666;">//Roof</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#eeeeee);
+&nbsp;&nbsp;<span style="color: #006699;">triangle</span>(400, 365, 585, 500, 215, 500);
+&nbsp;&nbsp;<span style="color: #666666;">//Base</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#555555);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(houseMove,500,houseHeight,houseWidth);
+&nbsp;&nbsp;<span style="color: #666666;">//Top Glass Door</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#d3ffff);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(400,560, 60, 40);
+&nbsp;&nbsp;<span style="color: #666666;">//Door</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#8b4513);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(400,610, 60, 90);
+&nbsp;&nbsp;<span style="color: #666666;">//Door Knob</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#000000);
+&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(445, 660, 13, 13);
+&nbsp;&nbsp;<span style="color: #666666;">//Door Knob(center)</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#ffffff);
+&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(445, 660, 5, 5);
+&nbsp;&nbsp;<span style="color: #666666;">//Grass</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#005C09);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(0,700,800,100);
+&nbsp;&nbsp;<span style="color: #666666;">//Glass</span>
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#d3ffff);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(270, 560, 110, 110);
+&nbsp;&nbsp;<span style="color: #006699;">stroke</span>(0);
+&nbsp;&nbsp;<span style="color: #006699;">line</span>(325, 560, 325, 670);
+&nbsp;&nbsp;<span style="color: #006699;">line</span>(380, 615, 270, 615);
+}
 }</code></pre>
                         </div>
                         <div class="content-box">
