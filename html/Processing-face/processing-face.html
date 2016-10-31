@@ -29,7 +29,7 @@
     <meta name="msapplication-square150x150logo" content="favicon/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="favicon/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="favicon/mstile-310x310.png" />
-    <title>Ant Mimic Spider</title>
+    <title>Processing | Face</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="nav-rp.js"></script>
     <script src="processing.min.js"></script>
@@ -75,53 +75,37 @@
 <span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>() {
 &nbsp;&nbsp;<span style="color: #006699;">size</span>(800,800);
 &nbsp;&nbsp;<span style="color: #006699;">background</span>(#00b4ff);
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
 }
-
-<span style="color: #E2661A;">int</span> houseWidth=500;
-<span style="color: #E2661A;">int</span> houseHeight=300;
-<span style="color: #E2661A;">int</span> houseMove=250;
+<span style="color: #E2661A;">int</span> PositionX = 400;
+<span style="color: #E2661A;">int</span> PositionY = 400;
+<span style="color: #E2661A;">int</span> HeadSize = 300;
+<span style="color: #E2661A;">int</span> HeadColor = #FEFEFE;
+<span style="color: #E2661A;">int</span> EyeColor = #ff4b00;
+<span style="color: #E2661A;">int</span> MouthColor = #ff4b00;
+<span style="color: #E2661A;">int</span> x,y;
 
 <span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>() {
-&nbsp;&nbsp;<span style="color: #666666;">// SUN</span>
-&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#FDB813);
-&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(50, 50, 200, 200);
-&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#ffffff);
-&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;(\u00B4\u30FB\u25E1\u30FB\uFF40)&quot;</span>, 40, 65);
-&nbsp;&nbsp;<span style="color: #666666;">//Roof</span>
-&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
-&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#eeeeee);
-&nbsp;&nbsp;<span style="color: #006699;">triangle</span>(400, 365, 585, 500, 215, 500);
-&nbsp;&nbsp;<span style="color: #666666;">//Base</span>
-&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
-&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#555555);
-&nbsp;&nbsp;<span style="color: #006699;">rect</span>(houseMove,500,houseHeight,houseWidth);
-&nbsp;&nbsp;<span style="color: #666666;">//Top Glass Door</span>
-&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
-&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#d3ffff);
-&nbsp;&nbsp;<span style="color: #006699;">rect</span>(400,560, 60, 40);
-&nbsp;&nbsp;<span style="color: #666666;">//Door</span>
-&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
-&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#8b4513);
-&nbsp;&nbsp;<span style="color: #006699;">rect</span>(400,610, 60, 90);
-&nbsp;&nbsp;<span style="color: #666666;">//Door Knob</span>
-&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
-&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#000000);
-&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(445, 660, 13, 13);
-&nbsp;&nbsp;<span style="color: #666666;">//Door Knob(center)</span>
-&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
-&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#ffffff);
-&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(445, 660, 5, 5);
-&nbsp;&nbsp;<span style="color: #666666;">//Grass</span>
-&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
-&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#005C09);
-&nbsp;&nbsp;<span style="color: #006699;">rect</span>(0,700,800,100);
-&nbsp;&nbsp;<span style="color: #666666;">//Glass</span>
-&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#d3ffff);
-&nbsp;&nbsp;<span style="color: #006699;">rect</span>(270, 560, 110, 110);
-&nbsp;&nbsp;<span style="color: #006699;">stroke</span>(0);
-&nbsp;&nbsp;<span style="color: #006699;">line</span>(325, 560, 325, 670);
-&nbsp;&nbsp;<span style="color: #006699;">line</span>(380, 615, 270, 615);
+&nbsp;&nbsp;head();
+&nbsp;&nbsp;eye();
+&nbsp;&nbsp;mouth();
 }
+
+<span style="color: #33997E;">void</span> head() {
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(HeadColor);
+&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(PositionX, PositionY, HeadSize, HeadSize);
+}
+
+<span style="color: #33997E;">void</span> eye() {
+&nbsp;&nbsp;<span style="color: #E2661A;">int</span> EyeSize = <span style="color: #006699;">int</span>(HeadSize * 2 / 15);
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(EyeColor);
+&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(PositionX - EyeSize, PositionY, EyeSize, EyeSize/1);
+&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(PositionX + EyeSize, PositionY, EyeSize, EyeSize/1);
+}
+
+<span style="color: #33997E;">void</span> mouth() {
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(MouthColor);
+&nbsp;&nbsp;<span style="color: #006699;">arc</span>(PositionX, PositionY + (HeadSize * 3 / 10), HeadSize / 3, HeadSize / 4, 0, <span style="color: #718A62;">PI</span>);
 }</code></pre>
                         </div>
                         <div class="content-box">
