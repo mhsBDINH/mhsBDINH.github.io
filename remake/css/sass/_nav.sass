@@ -6,14 +6,36 @@
     padding: 0 16px
     display: flex
     justify-content: space-between
+    position: fixed
+    box-sizing: border-box
     .logo
         &-left img
             height: 100%
             width: auto
+            user:
+                drag: none
+                select: none
 
-
-nav
-    .list
-        &-right
-            flex-direction: row
-            display: flex
+    nav
+        .list
+            list-style-type: none
+            margin: 0
+            &-right
+                flex-direction: row
+                display: flex
+                height: 56px
+            li
+                margin: 0
+                a
+                    text-decoration: none
+                    flex-direction: row
+                    display: flex
+                    transition: all ease 0.15s
+                    &:hover
+                        background-color: rgba(150, 150, 150, 0.2)
+                    i
+                        padding: 16px 12px
+                    span
+                        text-transform: uppercase
+                        font-weight: 500
+                        padding: 16px 12px 16px 0
