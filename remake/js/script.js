@@ -8,7 +8,8 @@ $(document).ready(function () {
         minimumTime: 300
     });
     $(window).scroll(function(){
-		if($(window).scrollTop() > 874){
+        var topheader = $(".parallax-header").offset().top;
+		if($(window).scrollTop() > topheader){
 			$("#back-to-top").fadeIn(200);
 		} else{
 			$("#back-to-top").fadeOut(200);
