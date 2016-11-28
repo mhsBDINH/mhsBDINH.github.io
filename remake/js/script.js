@@ -15,9 +15,12 @@ $(document).ready(function () {
 			$("#back-to-top").fadeOut(200);
 		}
 	});
-
 	$('#back-to-top, .back-to-top').click(function() {
 		  $('html, body').animate({ scrollTop:0 }, '800');
 		  return false;
 	});
+    $(".navToggle").click (function(){
+        $("nav .list").toggleClass("open");
+        $(".navToggle").toggleClass("open")
+    });
 });

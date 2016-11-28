@@ -1,0 +1,55 @@
+/* Larger than mobile */
+@media (max-width: 750px)
+    .wrap-content
+        .portfolio
+            &-box
+                flex-wrap: wrap
+    .box
+        width: auto
+    .nav-header
+        flex-direction: column
+        padding: 0
+        nav
+            .list
+                flex-direction: column
+                display: none
+                background-color: #eee
+                &.open
+                    height: auto
+                    display: flex
+        .logo
+            justify-content: center
+            align-self: center
+            align-items: center
+/* Larger than tablet */
+@media (min-width: 750px)
+    .box
+        width: 400px
+    .nav-header
+        height: 112px
+        flex-direction: column
+        padding: 0
+        nav
+            .list
+                flex-direction: row
+                display: flex
+                li
+                    width: 100%
+        .logo
+            justify-content: center
+            align-self: center
+            align-items: center
+    .navToggle
+        display: none
+/* Larger than desktop */
+@media (min-width: 1000px)
+    .nav-header
+        height: 56px
+        flex-direction: row
+        padding: 0 16px
+        nav
+            .list
+                flex-direction: row
+                display: flex
+    .navToggle
+        display: none
