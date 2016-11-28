@@ -1372,12 +1372,6 @@ body {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-.footer-header {
-    height: 270px;
-    background-color: #080808;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-}
-
 /* Larger than mobile */
 @media (max-width: 750px) {
     .wrap-content .portfolio-box {
