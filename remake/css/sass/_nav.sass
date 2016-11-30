@@ -1,6 +1,6 @@
 .nav-header
     width: 100%
-    background-color: #ffffff
+    background-color: $black-1
     height: 56px
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26)
     padding: 0 16px
@@ -8,6 +8,7 @@
     justify-content: space-between
     position: fixed
     box-sizing: border-box
+    z-index: 1
     .logo
         width: 56px
         height: 56px
@@ -22,6 +23,7 @@
         .list
             list-style-type: none
             margin: 0
+            background-color: $black-1
             &-right
                 flex-direction: row
                 display: flex
@@ -54,18 +56,18 @@
     border: none
     .icon
         transition-duration: 0.25s
-        width: 30px
+        width: 25px
         height: 2px
         top: 27px
         left: 20px
         position: absolute
-        background-color: black
+        background-color: $white-1
     &:before, &:after
         transition-duration: 0.25s
         position: absolute
-        width: 30px
+        width: 25px
         height: 2px
-        background-color: black
+        background-color: $white-1
         content: ""
     &:before
         top: 20px
@@ -78,9 +80,11 @@
     &.open
         &:after
             transform: rotate(45deg)
+            will-change: transform
             top: 27px
         &:before
             transform: rotate(-45deg)
+            will-change: transform
             top: 27px
         .icon
             display: none
