@@ -50,6 +50,7 @@ body
         box-sizing: border-box
         padding-bottom: 0
         color: $white-1
+        text-decoration: none
     p
         padding: 16px
         margin: 0
@@ -60,7 +61,7 @@ body
 
 .wrap-content
     width: 100%
-    .portfolio
+    .index
         display: flex
         flex-direction: column
         &-title
@@ -120,6 +121,23 @@ body
                     background-image: url("https://i.imgur.com/qnVSFfp.jpg")
                 &:hover
                     filter: brightness(60%)
+
+    .portfolio
+        &-box
+            display: flex
+            flex:
+                direction: row
+                wrap: wrap
+            .box
+                flex: 1 0 25%
+                button
+                    margin: 0
+                    width: 100%
+                    border: 0
+                        radius: 0
+                    background-color: #00b4ff
+        .index-title
+            margin-top: 56px
 
 #back-to-top
     position: fixed

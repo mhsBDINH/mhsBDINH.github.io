@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta content="Mitro" name="author">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="#00b0ff" name="theme-color">
+    <meta content="#00b0ff" name="msapplication-navbutton-color">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+    <meta content="Grass Spider" name="description">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Grass Spider - Home"/>
+    <meta name="msapplication-TileColor" content="#00B4FF" />
+    <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="favicon/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="favicon/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="favicon/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="favicon/mstile-310x310.png" />
+    <title>Processing | House</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="nav-rp.js"></script>
+    <script src="processing.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        <nav class="nav">
+            <a href="https://mhsbdinh.github.io/"><span class="nav-logo"></span>
+                <div class="title">
+                    <div class="name">Brian Dinh</div>
+                    <div class="nickname">Mito Dev</div>
+                </div>
+            </a>
+            <ul class="nav-links" id="id-nav-links">
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="https://mhsbdinh.github.io/">Home</a></li>
+            </ul>
+            <div class="nav-btn">
+                    <a href="javascript:void(0);" onclick="mobile()">
+                        <span class="nav-dot" id="mobile"></span>
+                        <span class="nav-fill"></span>
+                    </a>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="header">
+                <div class="content-align">
+                    <div class="content-bg">
+                        <div class="content-top_icon">
+                            <img src="image/processing3-logo.png" alt="Processing Icon"/>
+                        </div>
+                        <div class="content-top_title">
+                            <h2>Processing.js</h2>
+                            <p>(´・◡・｀)</p>
+                        </div>
+                        <div class="content-box">
+                            <canvas data-processing-sources="processing.pde"></canvas>
+                        </div>
+                        <div class="content-box content-box_code">
+                            <h1>Code</h1>
+<pre><code>
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>() {
+&nbsp;&nbsp;<span style="color: #006699;">size</span>(800,800);
+&nbsp;&nbsp;<span style="color: #006699;">background</span>(#00b4ff);
+}
+
+<span style="color: #E2661A;">int</span> houseWidth=500;
+<span style="color: #E2661A;">int</span> houseHeight=300;
+<span style="color: #E2661A;">int</span> houseMove=250;
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>() {
+&nbsp;&nbsp;<span style="color: #666666;">// SUN</span>
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#FDB813);
+&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(50, 50, 200, 200);
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#ffffff);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;(\u00B4\u30FB\u25E1\u30FB\uFF40)&quot;</span>, 40, 65);
+&nbsp;&nbsp;<span style="color: #666666;">//Roof</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#eeeeee);
+&nbsp;&nbsp;<span style="color: #006699;">triangle</span>(400, 365, 585, 500, 215, 500);
+&nbsp;&nbsp;<span style="color: #666666;">//Base</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#555555);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(houseMove,500,houseHeight,houseWidth);
+&nbsp;&nbsp;<span style="color: #666666;">//Top Glass Door</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#d3ffff);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(400,560, 60, 40);
+&nbsp;&nbsp;<span style="color: #666666;">//Door</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#8b4513);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(400,610, 60, 90);
+&nbsp;&nbsp;<span style="color: #666666;">//Door Knob</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#000000);
+&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(445, 660, 13, 13);
+&nbsp;&nbsp;<span style="color: #666666;">//Door Knob(center)</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#ffffff);
+&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(445, 660, 5, 5);
+&nbsp;&nbsp;<span style="color: #666666;">//Grass</span>
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#005C09);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(0,700,800,100);
+&nbsp;&nbsp;<span style="color: #666666;">//Glass</span>
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#d3ffff);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(270, 560, 110, 110);
+&nbsp;&nbsp;<span style="color: #006699;">stroke</span>(0);
+&nbsp;&nbsp;<span style="color: #006699;">line</span>(325, 560, 325, 670);
+&nbsp;&nbsp;<span style="color: #006699;">line</span>(380, 615, 270, 615);
+}
+}</code></pre>
+                        </div>
+                        <div class="content-box">
+                            <h2>Why can't I run this on Chrome local?</h2>
+                            <p>this...</p>
+                            <img src="image/why1.png" alt="error when running local">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer class="footer">
+        <div class="footer-title">
+            <a href="https://mhsbdinh.github.io/"><span class="footer-title-logo"></span></a>
+            <div class="footer-copyright">Copyright © Mito 2016-2017</div>
+        </div>
+            <div class="footer-link">
+                <a href="https://github.com/mhsBDINH" target="_blank" rel="noopener noreferrer" title="Github"><span class="footer-logo github"></span></a>
+                <a href="https://codepen.io/Miito" target="_blank" rel="noopener noreferrer" title="Codepen"><span class="footer-logo codepen"></span></a>
+            </div>
+</footer>
+</body>
+</html>
