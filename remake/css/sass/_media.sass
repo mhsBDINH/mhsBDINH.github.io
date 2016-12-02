@@ -1,9 +1,14 @@
 /* Larger than mobile */
 @media (max-width: 750px)
     .wrap-content
+        margin-top: 56px
         .portfolio
             &-box
                 flex-wrap: wrap
+                margin-top: 56px
+                .box
+                    flex-basis: auto
+
     .box
         width: auto
     .nav-header
@@ -24,8 +29,6 @@
             align-items: center
 /* Larger than tablet */
 @media (min-width: 750px)
-    .box
-        width: 400px
     .nav-header
         height: 112px
         flex-direction: column
@@ -42,6 +45,11 @@
             align-items: center
     .navToggle
         display: none
+    .wrap-content
+        margin-top: 112px
+        &-box
+            .box
+                width: 200px
 /* Larger than desktop */
 @media (min-width: 1000px)
     .nav-header
@@ -54,3 +62,5 @@
                 display: flex
     .navToggle
         display: none
+    .wrap-content
+        margin-top: 56px

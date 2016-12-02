@@ -14,9 +14,10 @@ body
     flex-direction: column
 
 .parallax
-    background-attachment: fixed
-    background-repeat: no-repeat
-    background-size: cover
+    background:
+        attachment: fixed
+        repeat: no-repeat
+        size: cover
     &-header
         height: 100vh
         width: 100%
@@ -38,6 +39,7 @@ body
     align-items: center
     justify-content: center
     width: 400px
+    height: auto
     box-sizing: border-box
     color: $white-1
     h1
@@ -57,7 +59,8 @@ body
         width: 100%
         box-sizing: border-box
     img
-        width: 100%
+        width: 200px
+        max-width: 100%
 
 .wrap-content
     width: 100%
@@ -76,7 +79,7 @@ body
                 font-size: 18px
                 font-weight: 600
                 color: $white-1
-        &-box
+        .grid-box
             display: flex
             flex-direction: column
             justify-content: center
@@ -90,11 +93,13 @@ body
                 transition: all .3s ease-in-out, transform .5s ease-in-out
                 box-shadow: none
                 h1, p
-                    font-weight: 600
-                    font-size: 45px
+                    font:
+                        weight: 600
+                        size: 45px
                     justify-content: flex-end
-                    align-items: flex-end
-                    align-self: flex-end
+                    align:
+                        items: flex-end
+                        self: flex-end
                     width: auto
                 p
                     font-size: 30px
@@ -109,8 +114,9 @@ body
             .background
                 width: 100%
                 height: 300px
-                background-size: cover
-                background-position: 50%
+                background:
+                    size: cover
+                    position: 50%
                 filter: brightness(85%)
                 transition: all .3s ease-in-out
                 &-1
@@ -123,21 +129,95 @@ body
                     filter: brightness(60%)
 
     .portfolio
-        &-box
+        .grid-box
             display: flex
             flex:
                 direction: row
                 wrap: wrap
+            background-color: #333
             .box
-                flex: 1 0 25%
-                button
-                    margin: 0
+                flex: 1 1 auto
+                    wrap: wrap
+                    flow: row wrap
+                    basis: 20%
+                a
                     width: 100%
-                    border: 0
-                        radius: 0
-                    background-color: #00b4ff
-        .index-title
-            margin-top: 56px
+                    button
+                        margin: 0
+                        width: 100%
+                        border: 0
+                            radius: 0
+                        background-color: #00b4ff
+                        transition: background-color .3s ease
+                        font:
+                            size: 14px
+                        color: $white-1
+                        &:hover
+                            background-color: #66d1ff
+
+    .about
+        .grid-box
+            display: flex
+            flex:
+                direction: column
+                wrap: wrap
+            background-color: #333
+            justify-content: center
+            align:
+                items: center
+                self: center
+            .box
+                width: 500px
+                max:
+                    width: 100%
+                    height: 100%
+                flex-direction: row
+                .header
+                    background-color: #080808
+                    padding: 20px
+                    box-sizing: border-box
+                    .avatar-wrapper
+                        h5
+                            color: $white-1
+                            text-align: center
+                        img
+                            width: 500px
+                .account
+                    margin: 10px
+                    h2
+                        font-size: 30px
+                        color: $white-1
+                    .account-link
+                        display: flex
+                        align:
+                            items: center
+                            self: center
+                        justify-content: space-around
+                        margin-bottom: 2rem
+                        flex-direction: column
+                        h5
+                            color: $white-1
+                        span
+                            background:
+                                size: 100%
+                                position: 50%
+                                repeat: no-repeat
+                            height: 60px
+                            width: 60px
+                            display: flex
+                            transition: all .3s ease-in-out
+                            &:hover
+                                transform: scale(1.2)
+                                will-change: transform
+                        .account-link__row
+                            display: flex
+                            flex-direction: row
+                            margin-right: auto
+                            margin-bottom: 20px
+                            h5
+                                margin: 0
+                                line-height: 60px
+                                margin-left: 10px
 
 #back-to-top
     position: fixed
