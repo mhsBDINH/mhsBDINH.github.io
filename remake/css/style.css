@@ -1180,6 +1180,8 @@ hr {
 .nav-header .logo-left img {
   height: 100%;
   width: auto;
+  padding: 17px 0;
+  box-sizing: border-box;
   user-drag: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1585,7 +1587,7 @@ body {
 }
 .wrap-content .about .grid-box .box {
   width: 500px;
-  max-width: 100%;
+  max-width: 90%;
   max-height: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -1777,9 +1779,12 @@ footer .footer .footer-link_row span:hover {
         -ms-flex-preferred-size: auto;
             flex-basis: auto;
   }
-
-  .box {
-    width: auto;
+  .wrap-content .about .grid-box .box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .nav-header {
