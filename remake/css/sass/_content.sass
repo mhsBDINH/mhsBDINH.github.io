@@ -61,9 +61,12 @@ body
     img
         width: 200px
         max-width: 100%
+    &-header
+        width: auto
 
 .wrap-content
     width: 100%
+    margin: 0
     .index
         display: flex
         flex-direction: column
@@ -79,7 +82,7 @@ body
                 font-size: 18px
                 font-weight: 600
                 color: $white-1
-        .grid-box
+        &-box
             display: flex
             flex-direction: column
             justify-content: center
@@ -101,32 +104,31 @@ body
                         items: flex-end
                         self: flex-end
                     width: auto
+                    transition: all .3s ease-in-out, transform .5s ease-in-out
                 p
                     font-size: 30px
                 &:hover p
-                    transform: translate(-50px)
+                    transform: translate(-80px)
                     will-change: transform
-                    transition: all .5s ease-in-out, transform .5s ease 80ms
                 &:hover h1
                     transform: translate(-50px)
                     will-change: transform
-                    transition: all .5s ease-in-out, transform .5s ease
+                &:hover
+                    transform: translate(-50px)
+                    will-change: transform
             .background
                 width: 100%
                 height: 300px
                 background:
                     size: cover
                     position: 50%
-                filter: brightness(85%)
                 transition: all .3s ease-in-out
                 &-1
-                    background-image: url("https://i.imgur.com/qnVSFfp.jpg")
+                    background: rgba(31, 31, 31, .5)
                 &-2
-                    background-image: url("https://i.imgur.com/qnVSFfp.jpg")
+                    background: rgba(31, 31, 31, .5)
                 &-3
-                    background-image: url("https://i.imgur.com/qnVSFfp.jpg")
-                &:hover
-                    filter: brightness(60%)
+                    background: rgba(31, 31, 31, .5)
 
     .portfolio
         .grid-box
