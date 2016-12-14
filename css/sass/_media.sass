@@ -1,6 +1,13 @@
 /* Larger than mobile */
 @media (max-width: 750px)
     .wrap-content
+        .index
+            &-box
+                .box
+                    &:hover
+                        transform: none
+                        h1, p
+                            transform: none
         .portfolio
             margin-top: 56px
             &-box
@@ -26,6 +33,7 @@
                 &.open
                     height: auto
                     display: flex
+                    padding: 0
         .logo
             justify-content: center
             align-self: center
