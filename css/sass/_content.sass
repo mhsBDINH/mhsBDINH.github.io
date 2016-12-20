@@ -66,101 +66,96 @@ body
 
 .wrap-content
     width: 100%
-    margin: 0
-    .index
+    display: flex
+    flex-direction: column
+    background-color: #333
+    &-title
+        align-items: center
+        padding: 50px 0 20px
+        text-align: center
+        background-color: $black-1
+        color: $white-1
+        h2
+            margin: 0
+            text-transform: uppercase
+            font-size: 18px
+            font-weight: 600
+            color: $white-1
+    &-box
         display: flex
         flex-direction: column
-        &-title
-            align-items: center
-            padding: 50px 0 20px
-            text-align: center
-            background-color: $black-1
-            color: $white-1
-            h2
-                margin: 0
-                text-transform: uppercase
-                font-size: 18px
-                font-weight: 600
-                color: $white-1
-        &-box
-            display: flex
-            flex-direction: column
-            justify-content: center
-            a
-                text-decoration: none
-            .box
-                width: 100%
-                margin: 0
-                height: 300px
-                background-color: transparent
+        justify-content: center
+        a
+            text-decoration: none
+        .box
+            width: 100%
+            margin: 0
+            height: 300px
+            background-color: transparent
+            transition: all .3s ease-in-out, transform .5s ease-in-out
+            box-shadow: none
+            h1, p
+                font:
+                    weight: 600
+                    size: 45px
+                justify-content: flex-end
+                align:
+                    items: flex-end
+                    self: flex-end
+                width: auto
                 transition: all .3s ease-in-out, transform .5s ease-in-out
-                box-shadow: none
-                h1, p
-                    font:
-                        weight: 600
-                        size: 45px
-                    justify-content: flex-end
-                    align:
-                        items: flex-end
-                        self: flex-end
-                    width: auto
-                    transition: all .3s ease-in-out, transform .5s ease-in-out
-                p
-                    font-size: 30px
-                &:hover p
-                    transform: translate(-80px)
-                    will-change: transform
-                &:hover h1
-                    transform: translate(-50px)
-                    will-change: transform
-                &:hover
-                    transform: translate(-50px)
-                    will-change: transform
-            .background
-                width: 100%
-                height: 300px
-                background:
-                    size: cover
-                    position: 50%
-                transition: all .3s ease-in-out
-                &-1
-                    background: rgba(31, 31, 31, .5)
-                &-2
-                    background: rgba(31, 31, 31, .5)
-                &-3
-                    background: rgba(31, 31, 31, .5)
-
-    .portfolio
-        .grid-box
-            display: flex
-            flex:
-                direction: row
+            p
+                font-size: 30px
+            &:hover p
+                transform: translate(-80px)
+                will-change: transform
+            &:hover h1
+                transform: translate(-50px)
+                will-change: transform
+            &:hover
+                transform: translate(-50px)
+                will-change: transform
+        .background
+            width: 100%
+            height: 300px
+            background:
+                size: cover
+                position: 50%
+            transition: all .3s ease-in-out
+            &-1
+                background: rgba(31, 31, 31, .5)
+            &-2
+                background: rgba(31, 31, 31, .5)
+            &-3
+                background: rgba(31, 31, 31, .5)
+    .grid-box
+        display: flex
+        flex:
+            direction: row
+            wrap: wrap
+        background-color: #333
+        .box
+            flex: 1 1 auto
                 wrap: wrap
-            background-color: #333
-            .box
-                flex: 1 1 auto
-                    wrap: wrap
-                    flow: row wrap
-                    basis: 20%
-                a
+                flow: row wrap
+                basis: 20%
+            a
+                width: 100%
+                button
+                    margin: 0
                     width: 100%
-                    button
-                        margin: 0
-                        width: 100%
-                        border: 0
-                            radius: 0
-                        background-color: #00b4ff
-                        transition: background-color .3s ease
-                        font:
-                            size: 14px
-                        color: $white-1
-                        height: 38px
-                        text-transform: uppercase
-                        &:hover
-                            background-color: #66d1ff
-
-    .about
-        .grid-box
+                    border: 0
+                        radius: 0
+                    background-color: #00b4ff
+                    transition: background-color .3s ease
+                    font:
+                        size: 14px
+                    color: $white-1
+                    height: 38px
+                    text-transform: uppercase
+                    &:hover
+                        background-color: #66d1ff
+        &__column
             display: flex
             flex:
                 direction: column
