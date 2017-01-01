@@ -1,5 +1,5 @@
 html
-    background-color: $blue-1
+    background-color: #212121
 body
     min-height: 100vh
     width: 100%
@@ -8,22 +8,26 @@ body
     margin: 0
     padding: 0
     font-family: 'Roboto', sans-serif
+    overflow-x: hidden
 
-.wrap-contain
-    display: flex
-    flex-direction: column
+.btn
+    padding: 8px 16px
+    border: 0
+    border-radius: 2px
+    background-color: #fff
+    transition: background-color .3s ease
+    font:
+        size: 14px
+        weight: 600
+    color: #4285f4
+    height: 36px
+    text-transform: uppercase
+    cursor: pointer
 
-.wrap-content
-    display: flex
-    .header
-        height: 80vh
-        width: 100%
-        background: #00b4ff
-        display: flex
-        .column
-            flex-direction: column
-            .row
-                flex-direction: row
+a
+    text-decoration: none
+    color: $white-1
+
 #back-to-top
     position: fixed
     z-index: 1000
@@ -34,10 +38,97 @@ body
         display: block
         width: 40px
         height: 40px
-        background: $blue-1 url(../img/backtotop.png) no-repeat center center
+        background: $blue-1 url(img/backtotop.png) no-repeat center center
         font-size: 0
         border-radius: 50%
         transition: all ease .3s
         &:hover
             opacity: .6
             box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2)
+
+.wrap-container
+    display: flex
+    flex-direction: column
+    .content
+        flex-direction: column
+        .header
+            background-color: #1976D2
+            display: flex
+            height: 100vh
+            color: #fff
+            .header-column
+                &__1
+                    max-width: 480px
+                    min-width: 480px
+                    background-color: #2196F3
+                    height: 100%
+                    flex: 1
+                    padding: 0 80px 0
+                    box-sizing: border-box
+                &__2
+                    width: 100%
+                    background-color: transparent
+                    height: calc(200vh - 72px)
+                    margin: 20px
+                    .header-column__img
+                        position: sticky
+                        top: 72px
+                        margin-bottom: 260px
+                        height: 56vh
+                        width: auto
+                &__info
+                    margin-top: 48px
+                    height: 100%
+                    .header-column
+                        &__head
+                            font-size: 34px
+                            margin: 0 18px 40px 0
+                        &__subhead
+                            color: rgba(255,255,255,0.70)
+                            font: 400 15px/24px Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+                            padding: 0 10px 24px 0
+                            margin-right: 18px
+
+        .row
+            display: flex
+            background-color: black
+            height: calc(100vh - 72px)
+            flex-direction: row
+            color: #fff
+            &-reverse
+                flex-direction: row-reverse
+            .column
+                &-1
+                    max-width: 480px
+                    min-width: 480px
+                    background-color: #212121
+                    height: 100%
+                    flex: 1
+                    padding: 0 80px 0
+                    box-sizing: border-box
+                    .column
+                        &-info
+                            margin-top: 48px
+                            height: 100%
+                        &-head
+                            font-size: 34px
+                            margin: 0 18px 40px 0
+                        &-subhead
+                            color: rgba(255,255,255,0.70)
+                            font: 400 15px/24px Roboto,RobotoDraft,Helvetica,Arial,sans-serif
+                            padding: 0 10px 24px 0
+                            margin-right: 18px
+                &-2
+                    max-width: 100%
+                    background-color: #212121
+                    height: 100%
+                    flex: 1
+                    padding: 0 80px 0
+                    box-sizing: border-box
+                    img
+                        width: 100%
+
+.divider
+    width: 100%
+    border-bottom: 1px solid rgba(255,255,255,0.30)
+    margin: 48px 0 24px
