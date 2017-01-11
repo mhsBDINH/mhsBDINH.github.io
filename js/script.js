@@ -1,12 +1,4 @@
 $(document).ready(function () {
-    $("body").queryLoader2({
-        barColor: "#111111",
-        backgroundColor: "#fff",
-        percentage: true,
-        barHeight: 6,
-        completeAnimation: "fade",
-        minimumTime: 300
-    });
     $(window).scroll(function(){
         var topheader = $(".parallax-header").offset().top;
 		if($(window).scrollTop() > topheader){
