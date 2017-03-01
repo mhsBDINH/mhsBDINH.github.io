@@ -1,0 +1,35 @@
+void setup()
+{
+  size(500, 500);
+  color myFill = color (#ffffff);
+  frameRate(120);
+  img = loadImage("img.png");
+}
+
+int y = 0;
+int x = 0;
+
+int speedY = 2;
+int speedX = 2;
+
+void draw()
+{
+  x = x + speedX;
+  y = y + speedY;
+  fill(myFill);
+  image(img, x, y, 50, 50);
+
+  if (x > width) {
+    speedX = speedX* -1;
+  }
+  else if (x < 0) {
+    speedX = speedX* -1;
+  }
+  if (y > height)
+  {
+    speedY = speedY* -1;
+  } else if (y < 0)
+  {
+    speedY = speedY* -1;
+  }
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Mito">
+    <meta content="#00b0ff" name="theme-color">
+    <meta content="#00b0ff" name="msapplication-navbutton-color">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+    <meta content="Mito Portfolio" name="description">
+    <link rel="icon" type="image/png" href="../../favicon.png" sizes="196x196" />
+    <meta name="application-name" content="Mito Dev - Home"/>
+    <meta name="msapplication-TileColor" content="#00B4FF" />
+    <title>Mito Dev - Summative</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+    <div class="wrap-contain">
+        <div class="nav-header">
+            <button class="navToggle">
+                <div class="icon"></div>
+            </button>
+            <div class="logo logo-left">
+                <a href="../../index.html"><img src="../../img/icon.png" alt="idk"></a>
+            </div>
+        <nav >
+            <ul class="list list-right">
+                <li><a href="../../index.html"><i class="material-icons">home</i><span>Home</span></a></li>
+                <li><a href="../portfolio.html"><i class="material-icons">assignment_ind</i><span>Portfolio</span></a></li>
+                <li><a href="../about.html"><i class="material-icons">perm_identity</i><span>About</span></a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="wrap-content nav-content-fix">
+            <div class="grid-box__column">
+                <div class="box">
+                    <h1>Summative Project</h1>
+                    <p>Due Jan 20</p>
+                    <canvas data-processing-sources="Sum_Game2.pde"></canvas>
+                </div>
+                <div class="box">
+                    <h1>Download Project</h1>
+                    <h2>Require <a href="http://code.compartmental.net/tools/minim/">Minim</a></h2>
+                    <p>I would recommend you to download the processing file because the web is a little bit funky.</p>
+                    <a href="./Sum_Game2.7z"><button>Download</button></a>
+                </div>
+                <div class="box">
+                    <h1>Code</h1>
+                    <pre><code>
+<span style="color: #E2661A;">PImage</span> startbg;
+<span style="color: #E2661A;">PImage</span> bg;
+
+<span style="color: #33997E;">import</span> ddf.minim.*; <span style="color: #666666;">//Import audio libary</span>
+<span style="color: #33997E;">import</span> ddf.minim.analysis.*;
+
+Minim&nbsp;minim;
+AudioPlayer&nbsp;song;
+BeatDetect&nbsp;beat;
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>setup</b></span>() {
+&nbsp;&nbsp;<span style="color: #006699;">size</span>(800, 800, <span style="color: #718A62;">P2D</span>);
+&nbsp;&nbsp;<span style="color: #006699;">frameRate</span>(120);
+&nbsp;&nbsp;<span style="color: #006699;">noStroke</span>();
+&nbsp;&nbsp;<span style="color: #006699;">smooth</span>();
+&nbsp;&nbsp;startbg&nbsp;=&nbsp;<span style="color: #006699;">loadImage</span>(<span style="color: #7D4793;">&quot;mania.png&quot;</span>);
+&nbsp;&nbsp;bg&nbsp;=&nbsp;<span style="color: #006699;">loadImage</span>(<span style="color: #7D4793;">&quot;bg.jpg&quot;</span>);
+&nbsp;&nbsp;<span style="color: #006699;">imageMode</span>(<span style="color: #718A62;">CENTER</span>);
+&nbsp;&nbsp;<span style="color: #006699;">rectMode</span>(<span style="color: #718A62;">CENTER</span>);
+&nbsp;&nbsp;minim&nbsp;=&nbsp;<span style="color: #33997E;">new</span> Minim(<span style="color: #33997E;">this</span>);
+&nbsp;&nbsp;song&nbsp;=&nbsp;minim.loadFile(<span style="color: #7D4793;">&quot;xi-ANIMA.mp3&quot;</span>);
+&nbsp;&nbsp;beat&nbsp;=&nbsp;<span style="color: #33997E;">new</span> BeatDetect();
+&nbsp;&nbsp;beat.setSensitivity(10);
+}
+
+<span style="color: #E2661A;">ArrayList</span> tile = <span style="color: #33997E;">new</span> <span style="color: #006699;">ArrayList</span>(); <span style="color: #666666;">//Tile lists</span>
+<span style="color: #33997E;">final</span> <span style="color: #E2661A;">int</span> stateStart = 0; <span style="color: #666666;">//State of Start page</span>
+<span style="color: #33997E;">final</span> <span style="color: #E2661A;">int</span> stateGame = 1; <span style="color: #666666;">//State of Game page</span>
+<span style="color: #33997E;">final</span> <span style="color: #E2661A;">int</span> stateInstruction = 2; <span style="color: #666666;">//State of Instruction Page</span>
+<span style="color: #E2661A;">int</span> state = 0; <span style="color: #666666;">//Set state on start</span>
+<span style="color: #E2661A;">boolean</span> dev = <span style="color: #33997E;">true</span>; <span style="color: #666666;">//Dev Mode</span>
+<span style="color: #E2661A;">boolean</span> win = <span style="color: #33997E;">false</span>; <span style="color: #666666;">//Boolean for the Winner!! screen</span>
+<span style="color: #E2661A;">int</span> score = 0; <span style="color: #666666;">//The score</span>
+<span style="color: #E2661A;">int</span> btnWidth =  250;
+<span style="color: #E2661A;">int</span> btnHeight =  100;
+<span style="color: #E2661A;">float</span> testCircle;
+<span style="color: #E2661A;">float</span> bpm = 183.5;
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>draw</b></span>()  {
+&nbsp;&nbsp;<span style="color: #666666;">//State logic</span>
+&nbsp;&nbsp;<span style="color: #669900;">switch</span>(state) {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">case</span> stateStart:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setStart();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">break</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">case</span> stateGame:  <span style="color: #666666;">// here once was a typo (edited)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setGame();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">break</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;FpsOverlay();
+&nbsp;&nbsp;BeatTest();
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(255);
+}
+
+<span style="color: #33997E;">void</span> FpsOverlay() {
+&nbsp;&nbsp;<span style="color: #E2661A;">int</span> fpslocY = 720; <span style="color: #666666;">//loc for FpsOverlay</span>
+&nbsp;&nbsp;<span style="color: #E2661A;">int</span> fpslocX = 790; <span style="color: #666666;">//loc for FpsOverlay</span>
+&nbsp;&nbsp;<span style="color: #669900;">if</span> (dev  ==  <span style="color: #33997E;">true</span>) { <span style="color: #666666;">//Check for Dev mode</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#4CAF60);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">textSize</span>(20);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #D94A7A;">frameRate</span>, fpslocY, fpslocX); <span style="color: #666666;">//Framerate Count of FpsOverlay</span>
+&nbsp;&nbsp;}
+}
+
+<span style="color: #33997E;">void</span> BeatTest() {
+&nbsp;&nbsp;<span style="color: #669900;">if</span> (dev == <span style="color: #33997E;">true</span>) {
+&nbsp;&nbsp;&nbsp;&nbsp;beat.detect(song.mix);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #E2661A;">float</span> a = <span style="color: #006699;">map</span>(testCircle, 20, 80, 60, 255);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">fill</span>(60, 255, 0, a);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> ( beat.isOnset() ) testCircle = 80;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">ellipse</span>(<span style="color: #D94A7A;">width</span>/2, <span style="color: #D94A7A;">height</span>/2, testCircle, testCircle);
+&nbsp;&nbsp;&nbsp;&nbsp;testCircle&nbsp;*=&nbsp;0.95;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> ( testCircle &lt; 20 ) testCircle = 20;
+&nbsp;&nbsp;}
+}
+
+<span style="color: #33997E;">void</span> setStart() {
+&nbsp;&nbsp;<span style="color: #006699;">background</span>(#cc5288);
+&nbsp;&nbsp;startbg.<span style="color: #006699;">resize</span>(<span style="color: #D94A7A;">width</span> / 2, <span style="color: #D94A7A;">height</span> / 2);
+&nbsp;&nbsp;<span style="color: #006699;">image</span>(startbg, <span style="color: #D94A7A;">width</span> / 2, <span style="color: #D94A7A;">height</span> / 3);
+&nbsp;&nbsp;<span style="color: #006699;">textAlign</span>(<span style="color: #718A62;">CENTER</span>, <span style="color: #718A62;">BOTTOM</span>);
+&nbsp;&nbsp;<span style="color: #006699;">textSize</span>(20);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;Welcome to Mania!&quot;</span>, <span style="color: #D94A7A;">width</span> / 2, <span style="color: #D94A7A;">height</span> / 1.45);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;To play: use the D, F, J, K key to click the tile to the beat&quot;</span>, <span style="color: #D94A7A;">width</span> / 2, <span style="color: #D94A7A;">height</span> / 1.35);
+&nbsp;&nbsp;<span style="color: #666666;">//Start and instruction button</span>
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(<span style="color: #D94A7A;">width</span> / 2, <span style="color: #D94A7A;">height</span> / 1.15, btnWidth, btnHeight);
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(0);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;Click anywhere to play&quot;</span>, <span style="color: #D94A7A;">width</span> / 2, <span style="color: #D94A7A;">height</span> / 1.13);
+}
+
+<span style="color: #33997E;">void</span> setGame() {
+&nbsp;&nbsp;tiles&nbsp;til&nbsp;=&nbsp;<span style="color: #33997E;">new</span> tiles(<span style="color: #006699;">int</span>(<span style="color: #006699;">random</span>(0, bpm/60)));
+
+&nbsp;&nbsp;<span style="color: #669900;">if</span> (beat.isOnset() == <span style="color: #33997E;">true</span>) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tile.<span style="color: #006699;">add</span>(til);
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #006699;">background</span>(#212121);
+&nbsp;&nbsp;<span style="color: #006699;">image</span>(bg, <span style="color: #D94A7A;">width</span> / 2, <span style="color: #D94A7A;">height</span> / 2);
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(49, 49, 49, 100);
+&nbsp;&nbsp;<span style="color: #666666;">//Column with Letter</span>
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(<span style="color: #D94A7A;">width</span> / 2, <span style="color: #D94A7A;">height</span> / 2, 50, <span style="color: #D94A7A;">height</span>);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(<span style="color: #D94A7A;">width</span> / 2 - 100, <span style="color: #D94A7A;">height</span> / 2, 50, <span style="color: #D94A7A;">height</span>);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(<span style="color: #D94A7A;">width</span> / 2 - 200, <span style="color: #D94A7A;">height</span> / 2, 50, <span style="color: #D94A7A;">height</span>);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(<span style="color: #D94A7A;">width</span> / 2 - 300, <span style="color: #D94A7A;">height</span> / 2, 50, <span style="color: #D94A7A;">height</span>);
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#FFFFFF);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;D&quot;</span>,<span style="color: #D94A7A;">width</span> / 2 - 300, <span style="color: #D94A7A;">height</span> - 20);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;F&quot;</span>,<span style="color: #D94A7A;">width</span> / 2 - 200, <span style="color: #D94A7A;">height</span> - 20);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;J&quot;</span>,<span style="color: #D94A7A;">width</span> / 2 - 100, <span style="color: #D94A7A;">height</span> - 20);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(<span style="color: #7D4793;">&quot;K&quot;</span>,<span style="color: #D94A7A;">width</span> / 2, <span style="color: #D94A7A;">height</span> - 20);
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(255,0,0);
+&nbsp;&nbsp;<span style="color: #006699;">rect</span>(<span style="color: #D94A7A;">width</span> / 2, 650, <span style="color: #D94A7A;">width</span>, 50);
+&nbsp;&nbsp;<span style="color: #666666;">//Loop for key press that are global XD</span>
+&nbsp;&nbsp;<span style="color: #669900;">for</span> (<span style="color: #E2661A;">int</span> i=0; i&lt;tile.<span style="color: #006699;">size</span>(); i++) {
+&nbsp;&nbsp;&nbsp;&nbsp;tiles&nbsp;block&nbsp;=&nbsp;(tiles)&nbsp;tile.<span style="color: #006699;">get</span>(i);
+&nbsp;&nbsp;&nbsp;&nbsp;block.run();
+&nbsp;&nbsp;&nbsp;&nbsp;block.move();
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> (<span style="color: #D94A7A;">key</span>  ==  <span style="color: #7D4793;">&apos;k&apos;</span>  &amp;&amp;  block.loc.y &gt; <span style="color: #D94A7A;">height</span> - 220  &amp;&amp;  block.loc.x == <span style="color: #D94A7A;">width</span> / 2 &amp;&amp; <span style="color: #D94A7A;">keyPressed</span>) {<span style="color: #666666;">//K key</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.miss=<span style="color: #33997E;">true</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> (<span style="color: #D94A7A;">key</span> == <span style="color: #7D4793;">&apos;j&apos;</span> &amp;&amp; block.loc.y &gt; <span style="color: #D94A7A;">height</span> - 220 &amp;&amp; block.loc.x == <span style="color: #D94A7A;">width</span> / 2 - 100 &amp;&amp; <span style="color: #D94A7A;">keyPressed</span>) {<span style="color: #666666;">//J Key</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.miss=<span style="color: #33997E;">true</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> (<span style="color: #D94A7A;">key</span> == <span style="color: #7D4793;">&apos;f&apos;</span> &amp;&amp; block.loc.y &gt; <span style="color: #D94A7A;">height</span> - 220 &amp;&amp; block.loc.x == <span style="color: #D94A7A;">width</span> / 2 - 200 &amp;&amp; <span style="color: #D94A7A;">keyPressed</span>) {<span style="color: #666666;">//F key</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.miss=<span style="color: #33997E;">true</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> (<span style="color: #D94A7A;">key</span> == <span style="color: #7D4793;">&apos;d&apos;</span> &amp;&amp; block.loc.y &gt; <span style="color: #D94A7A;">height</span> - 220 &amp;&amp; block.loc.x == <span style="color: #D94A7A;">width</span> / 2 - 300 &amp;&amp; <span style="color: #D94A7A;">keyPressed</span>) {<span style="color: #666666;">//D key</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;block.miss=<span style="color: #33997E;">true</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">//Remove titles when pas</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> (block.loc.y &gt; 650) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tile.<span style="color: #006699;">remove</span>(i);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score=0;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">//Add score with combo</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #669900;">if</span> (block.miss == <span style="color: #33997E;">true</span>) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score&nbsp;+=&nbsp;block.loc.y&nbsp;&gt;&nbsp;700&nbsp;?&nbsp;30:block.loc.y&nbsp;&gt;&nbsp;600&nbsp;?&nbsp;20:10;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">//scoring system(you get more points if you do better)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tile.<span style="color: #006699;">remove</span>(i);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#0000aa);
+&nbsp;&nbsp;<span style="color: #006699;">textAlign</span>(<span style="color: #718A62;">CENTER</span>);
+&nbsp;&nbsp;<span style="color: #006699;">textSize</span>(100);
+&nbsp;&nbsp;<span style="color: #006699;">text</span>(score, <span style="color: #D94A7A;">width</span> / 3 - 15, 450);
+&nbsp;&nbsp;song.play();
+}
+
+<span style="color: #33997E;">class</span> tiles {
+&nbsp;&nbsp;<span style="color: #E2661A;">PVector</span> loc;
+&nbsp;&nbsp;<span style="color: #E2661A;">Boolean</span> miss=<span style="color: #33997E;">false</span>;
+
+&nbsp;&nbsp;tiles(<span style="color: #E2661A;">int</span> i) {
+&nbsp;&nbsp;&nbsp;&nbsp;loc&nbsp;=&nbsp;<span style="color: #33997E;">new</span> <span style="color: #006699;">PVector</span>(<span style="color: #D94A7A;">width</span> / 2 - (100 * i), 0);
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #33997E;">void</span> run() {
+&nbsp;&nbsp;&nbsp;&nbsp;col1();
+&nbsp;&nbsp;&nbsp;&nbsp;col2();
+&nbsp;&nbsp;&nbsp;&nbsp;col3();
+&nbsp;&nbsp;&nbsp;&nbsp;col4();
+&nbsp;&nbsp;&nbsp;&nbsp;move();
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #33997E;">void</span> col1() {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#1d76a9);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">rect</span>(loc.x, loc.y, 100, 50);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #33997E;">void</span> col2() {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#23a11d);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">rect</span>(loc.x, loc.y, 100, 50);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #33997E;">void</span> col3() {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#23a11d);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">rect</span>(loc.x, loc.y, 100, 50);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #33997E;">void</span> col4() {
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">fill</span>(#1d76a9);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #006699;">rect</span>(loc.x, loc.y, 100, 50);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;<span style="color: #33997E;">void</span> move() {
+&nbsp;&nbsp;&nbsp;&nbsp;loc.y+=bpm/60;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">//note speed, changing this will up the difficulity, putting it too high will make</span>
+&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #666666;">//it literally impossible</span>
+}
+
+<span style="color: #33997E;">void</span> <span style="color: #006699;"><b>mousePressed</b></span>() {
+&nbsp;&nbsp;<span style="color: #669900;">if</span> (state  ==  0) {
+&nbsp;&nbsp;&nbsp;&nbsp;state&nbsp;=&nbsp;1;
+&nbsp;&nbsp;}
+}
+
+<span style="color: #33997E;">class</span> BeatListener <span style="color: #33997E;">implements</span> AudioListener
+{
+&nbsp;&nbsp;<span style="color: #33997E;">private</span> BeatDetect beat;
+&nbsp;&nbsp;<span style="color: #33997E;">private</span> AudioPlayer source;
+
+&nbsp;&nbsp;BeatListener(BeatDetect&nbsp;beat,&nbsp;AudioPlayer&nbsp;source)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.source = source;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.source.addListener(<span style="color: #33997E;">this</span>);
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #33997E;">this</span>.beat = beat;
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #33997E;">void</span> samples(<span style="color: #E2661A;">float</span>[] samps)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;beat.detect(source.mix);
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;<span style="color: #33997E;">void</span> samples(<span style="color: #E2661A;">float</span>[] sampsL, <span style="color: #E2661A;">float</span>[] sampsR)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;beat.detect(source.mix);
+&nbsp;&nbsp;}
+}
+</code></pre>
+                </div>
+            </div>
+            <footer>
+                <div class="footer">
+                    <h2>Find me elsewhere</h2>
+                    <div class="footer-link_row">
+                        <a href="https://codepen.io/Miito" target="_blank" rel="noopener noreferrer" title="Codepen"><span style="background-image: url(../../img/codepen.png)"></span></a>
+                        <a href="https://github.com/mhsBDINH" target="_blank" rel="noopener noreferrer" title="Github"><span style="background-image: url(../../img/github.png)"></span></a>
+                    </div>
+                    <p>Copyright © Mito 2015-2016</p>
+                </div>
+            </footer>
+        </div>
+        <div id="back-to-top">
+            <a href="#">Back to Top</a>
+        </div>
+<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../../js/script.js"></script>
+<script type="text/javascript" src="<minim class="min"></minim>.js"></script>
+<script type="text/javascript" src="processing.min.js"></script>
+</body>
+</html>

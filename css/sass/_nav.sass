@@ -1,0 +1,98 @@
+.nav-header
+    width: 100%
+    background-color: $black-1
+    height: 56px
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26)
+    padding: 0 16px
+    display: flex
+    justify-content: space-between
+    position: fixed
+    box-sizing: border-box
+    z-index: 1
+    .logo
+        width: 56px
+        height: 56px
+        &-left img
+            height: 100%
+            width: auto
+            padding: 17px 0
+            box-sizing: border-box
+            user:
+                drag: none
+                select: none
+
+    nav
+        .list
+            list-style-type: none
+            margin: 0
+            background-color: $black-1
+            &-right
+                flex-direction: row
+                display: flex
+                height: 56px
+            li
+                margin: 0
+                a
+                    text-decoration: none
+                    flex-direction: row
+                    display: flex
+                    transition: all ease .3s
+                    color: $white-1
+                    &:hover
+                        background-color: rgba(150, 150, 150, 0.2)
+                    i
+                        padding: 16px 12px
+                    span
+                        text-transform: uppercase
+                        font-weight: 500
+                        padding-right: 12px
+                        line-height: 56px
+
+
+.navToggle
+    width: auto
+    height: 56px
+    transition-duration: 0.5s
+    padding: 0 35px
+    margin: auto 0
+    position: absolute
+    box-sizing: border-box
+    border: none
+    background: transparent
+    .icon
+        transition-duration: 0.25s
+        width: 25px
+        height: 2px
+        top: 27px
+        left: 20px
+        position: absolute
+        background-color: $white-1
+    &:before, &:after
+        transition-duration: 0.25s
+        position: absolute
+        width: 25px
+        height: 2px
+        background-color: $white-1
+        content: ""
+    &:before
+        top: 20px
+        left: 20px
+    &:after
+        top: 34px
+        left: 20px
+    &:hover
+        cursor: pointer
+    &.open
+        &:after
+            transform: rotate(45deg)
+            will-change: transform
+            top: 27px
+        &:before
+            transform: rotate(-45deg)
+            will-change: transform
+            top: 27px
+        .icon
+            display: none
+
+.nav-content-fix
+    margin-top: 56px

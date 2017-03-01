@@ -1,0 +1,320 @@
+@import  'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#browserWarning {
+    display: none;
+    position: absolute;
+    height: 40px;
+    top: 80px;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+    background-color: #00b4ff;
+    color: #000;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo {
+    position: absolute;
+    background: url(../logo/icon.png) no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    top: 25px;
+    left: 30px;
+    -webkit-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -moz-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -ms-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -o-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+}
+
+.title {
+    position: absolute;
+    top: 15px;
+    left: 85px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Open Sans',sans-serif;
+    text-align: left;
+}
+
+.header {
+    background: url(https://i.imgur.com/qnVSFfp.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    margin-top: -80px;
+}
+
+.headercontent {
+    text-align: center;
+    padding-top: 15%;
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.headercontent p {
+    font-size: 30px;
+    font-style: italic;
+}
+
+.ad-box {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 20pt;
+    color: #000;
+    padding: 40px 0;
+}
+
+.ad-box--title {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 30%;
+}
+
+.ad-box--title h1 {
+    border-bottom: 6px solid #000;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.content-box {
+    display: inline-block;
+    height: 100%;
+    max-width: 330px;
+    margin: 20px 40px;
+    color: #141414;
+    border-radius: 2px;
+    border: 6px solid #141414;
+    padding: 20px 25px;
+    box-shadow: 0 4px 6px 1px rgba(0,0,0,0.4);
+}
+
+.content-box img {
+    width: 330px;
+}
+
+.content {
+    z-index: 2;
+}
+
+button {
+    -webkit-box-shadow: 0 1px 6px #141414;
+    -moz-box-shadow: 0 1px 6px #141414;
+    box-shadow: 0 1px 6px #141414;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px;
+    text-decoration: none;
+    border: none;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    background-color: rgba(20,20,20,0.6);
+    cursor: pointer;
+}
+
+button:hover {
+    -webkit-box-shadow: 0 5px 6px #141414;
+    -moz-box-shadow: 0 5px 6px #141414;
+    box-shadow: 0 5px 6px #141414;
+    background-color: #00b4ff;
+}
+
+button:active {
+    transform: translateY(6px);
+}
+
+button:focus {
+    outline: 2px solid #fff;
+}
+
+footer {
+    height: 80px;
+    background-color: #141414;
+    width: 100%;
+    padding: 0;
+    position: relative;
+}
+
+.copyright {
+    position: absolute;
+    top: 30px;
+    left: 85px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.link-logo {
+    background-size: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin: 20px 30px 0 10px;
+    float: right;
+    -webkit-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -moz-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -ms-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    -o-transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+    transition: transform 200ms cubic-bezier(.04,.34,.15,1);
+}
+
+.link-logo:hover,.logo:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.outer-header {
+    max-width: 27vw;
+    min-width: 230px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    padding: 1vh 2vw;
+    background-color: rgba(20,20,20,0.6);
+    box-shadow: 0 4px 6px 1px rgba(0,0,0,0.4);
+}
+
+.outer-header p:nth-child(3) {
+    font-size: 10px;
+}
+
+
+.github {
+    background-image: url(../logo/GitHub-Mark-Light-120px-plus.png);
+}
+
+
+.codepen {
+    background-image: url(../logo/Button-White-Large.png);
+}
+
+
+.about--box {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+.about--box_interested img {
+    height: 200px;
+    width: 200px;
+    margin-top: 5%;
+}
+
+.about--box_interested a {
+    color: #000;
+}
+
+.outer-box {
+    max-width: 90%;
+    margin-top: 10%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    padding: 1vh 2vw;
+    background-color: rgba(20,20,20,0.6);
+    box-shadow: 0 4px 6px 1px rgba(0,0,0,0.4);
+}
+
+.outer-box__avatar {
+    width: 200px;
+}
+
+.outer-box h1,.outer-box h2,.outer-box p {
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .headercontent {
+        padding-top: 25vh;
+    }
+
+    .title-bottom {
+        display: none;
+    }
+
+    .content-box {
+        margin: 0;
+        width: auto;
+        height: auto;
+        border: none;
+        box-shadow: none;
+        display: block;
+        max-width: 100%;
+    }
+
+    .content-box img {
+        width: 100%;
+    }
+
+    .header {
+        height: 120vh;
+    }
+
+    footer {
+        height: 320px;
+        padding-top: 20px;
+        box-sizing: border-box;
+    }
+
+    .footer-link {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .link-logo {
+        display: block;
+        margin: 50px auto;
+        float: none;
+        height: 60px;
+        width: 60px;
+    }
+
+    .ad-box--title {
+        width: auto;
+    }
+
+    #browserWarning {
+        position: fixed;
+    }
+
+    .outer-box {
+        margin-top: 30%;
+    }
+
+    .about--box {
+        display: block;
+    }
+
+    .about--box_interested {
+        display: block;
+        width: 100%;
+    }
+}
